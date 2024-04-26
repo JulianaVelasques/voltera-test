@@ -64,14 +64,12 @@
 	searchMarkdownFile();
   </script>
   
-
-<!-- Ver o que esse page faz no tutorial -->
 <header>
 	<nav class="nav-links">
-			<li class="forward"><a href="/" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/'}>Home</a></li>
-			<li class="forward"><a href="/markdown" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/markdown'}>Markdown</a></li>
-			<li class="forward"><a href="/america" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/america'}>América</a></li>
-			<li class="forward"><a href="/tipografia" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/tipografia'}>Tipografia</a></li>
+			<li class="forward"><a href="/"class:active={$page.url.pathname === "/"} on:click={clearSearchQuery} aria-current={$page.url.pathname === '/'}>Home</a></li>
+			<li class="forward"><a href="/markdown"class:active={$page.url.pathname === "/markdown"}  on:click={clearSearchQuery} aria-current={$page.url.pathname === '/markdown'}>Markdown</a></li>
+			<li class="forward"><a href="/america"class:active={$page.url.pathname === "/america"} on:click={clearSearchQuery} aria-current={$page.url.pathname === '/america'}>América</a></li>
+			<li class="forward"><a href="/tipografia"class:active={$page.url.pathname === "/tipografia"}  on:click={clearSearchQuery} aria-current={$page.url.pathname === '/tipografia'}>Tipografia</a></li>
 	</nav>
 </header>
 
@@ -92,7 +90,6 @@
 			<slot />
 		</div>
 	</div>
-
 </main>
 
 <footer>
@@ -107,7 +104,7 @@
 	</div>
 
 	<div class="separator"></div>
-	<p class="footer-texto">Juliana Velasques - Teste 2024</p>
+	<p class="footer-text">Juliana Velasques - Teste 2024</p>
   </footer>
 
 <style>
@@ -159,7 +156,7 @@
 		border-radius: 1rem;
 	}
 
-	.nav-links{
+	.nav-links {
 		display: flex;
 		align-items: center;
 		background: #fff;
@@ -167,20 +164,26 @@
 		box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 	}
 
-	.nav-links li{
+	.nav-links li {
 		list-style: none;
 		margin: 0 12px;
 	}
 
-	.nav-links li a{
+	.active {
+		background: #BBF433; 
+		border-radius: 0.5rem 0.5rem 0 0; 
+		transition: all 0.4s ease; 
+	}
+
+	.nav-links li a {
 		position: relative;
 		color: #333;
 		font-size: 1.1rem;
-		padding: 6px 0;
+		padding: 0.5rem;
 		text-decoration: none;
 	}
 
-	.nav-links li a:before{
+	.nav-links li a:before {
 		content: '';
 		position: absolute;
 		bottom: 0;
@@ -192,23 +195,23 @@
 		transition: all 0.4s ease;
 	}
 
-	.nav-links li a:hover:before{
+	.nav-links li a:hover:before {
 		width: 100%;
 	}
 
-	.nav-links li.forward a:before{
+	.nav-links li.forward a:before {
 		width: 100%;
 		transform: scaleX(0);
 		transform-origin: right;
 		transition: transform 0.4s ease;
 	}
 
-	.nav-links li.forward a:hover:before{
+	.nav-links li.forward a:hover:before {
 		transform: scaleX(1);
 		transform-origin: left;
 	}
 
-	footer{
+	footer {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -223,7 +226,7 @@
 		font-size: 1.3rem;
 	}
 
-	.footer-links{
+	.footer-links {
 		display: flex;
 		gap: 1rem;
 		margin-bottom: 0.5rem;
@@ -235,7 +238,7 @@
 		margin-bottom: 0.5rem;
 	}
 
-	.footer-texto {
+	.footer-text {
 		margin: 0;
 	}
 </style>
