@@ -28,7 +28,7 @@
 
   
 ## :page_with_curl: About
-The Long List was created for the frontend test at Voltera Energia. This is an App using SveltKit + CSS + Typescript that allows you to navigate and search for words inside a .md file. Take a look here: [Search App website]()
+The Long List was created for the frontend test at Voltera Energia. This is an App using SveltKit + CSS + Typescript that allows you to navigate and search for words inside a .md file. Take a look here: [Search App website](https://voltera-test.vercel.app/)
 
 
 
