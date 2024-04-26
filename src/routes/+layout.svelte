@@ -97,11 +97,11 @@
 
 <footer>
 	<div class="footer-links">
-		<a href="https://www.linkedin.com/in/julianavelasquesbalta/">
+		<a href="https://www.linkedin.com/in/julianavelasquesbalta/" target="_blank">
 			<i class="fab fa-linkedin"></i>
 		</a>
 	
-		<a href="https://github.com/JulianaVelasques">
+		<a href="https://github.com/JulianaVelasques" target="_blank">
 			<i class="fab fa-github"></i>
 		</a>
 	</div>
