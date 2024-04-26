@@ -68,6 +68,7 @@
 <!-- Ver o que esse page faz no tutorial -->
 <header>
 	<nav class="nav-links">
+			<li class="forward"><a href="/" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/'}>Home</a></li>
 			<li class="forward"><a href="/markdown" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/markdown'}>Markdown</a></li>
 			<li class="forward"><a href="/america" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/america'}>América</a></li>
 			<li class="forward"><a href="/tipografia" on:click={clearSearchQuery} aria-current={$page.url.pathname === '/tipografia'}>Tipografia</a></li>
@@ -77,12 +78,15 @@
 <main>
 	<div class="main-box">
 		<!-- Search input -->
-		<div class="search-container">
-			<input type="text" bind:value={searchQuery} on:input={handleInputChange} placeholder="Busque por palavras...">
-			{#if (searchQuery.trim() !== '')}
-				<p class="occurrences">Número de ocorrências: {$searchResults}</p>
-			{/if}
-		</div>
+		{#if ($page.url.pathname !== '/')}
+			<div class="search-container">
+				<input type="text" bind:value={searchQuery} on:input={handleInputChange} placeholder="Busque por palavras...">
+				{#if (searchQuery.trim() !== '')}
+					<p class="occurrences">Número de ocorrências: {$searchResults}</p>
+				{/if}
+			</div>
+		{/if}
+
 
 		<div class="content-box">
 			<slot />
@@ -114,7 +118,7 @@
 	}
 
 	main {
-		margin-top: 4rem;
+		margin-top: 6rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -127,7 +131,6 @@
 	.search-container {
 		display: flex;
 		gap: 1rem;
-		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
 
